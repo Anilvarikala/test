@@ -6,7 +6,7 @@ const User = require('../models/user')
 
 exports.clerkWebhook = async (req, res) => {
   try{
-      const whook = new Webhook(process.env.CLERK_WEBHOKK_SECRET)
+      const whook = new webhook(process.env.CLERK_WEBHOKK_SECRET)
       await whook.verify(JSON.stringify(req.body), {
         "svix-id" : req.headers["svix-id"],
         "svix-timestamp" : req.headers["svix-timestamp"],
